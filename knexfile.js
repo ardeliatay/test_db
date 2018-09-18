@@ -2,7 +2,7 @@
 const settings = require("./settings");
 module.exports = {
   development: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
       database: settings.database,
       host:     settings.hostname,
@@ -19,7 +19,7 @@ module.exports = {
   },
 
   staging: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
       database: settings.database,
       host:     settings.hostname,
@@ -36,7 +36,7 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
       database: settings.database,
       host:     settings.hostname,
