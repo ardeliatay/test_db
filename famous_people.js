@@ -17,7 +17,10 @@ function handler (err, result) {
   if (err) {
       return console.error("error running query", err);
     }
-  result.rows.forEach(person => console.log(`${person.id}: ${person.first_name} ${person.last_name}, born '${person.birthdate.toLocaleDateString()}'`));
+  console.log("Searching...")
+  console.log(`Found ${result.rowCount} person(s) by the name of ${searchData}`)
+  result.rows.forEach(person =>
+    console.log(`${person.id}: ${person.first_name} ${person.last_name}, born '${person.birthdate.toLocaleDateString()}'`));
   client.end();
 };
 
