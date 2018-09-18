@@ -1,16 +1,6 @@
-const settings = require("./settings"); // settings.json
+const knexConfig = require('./knexfile')
+const knex = require('knex')(knexConfig['development']);
 
-const knex = require('knex')({
-    client: 'pg',
-    version: '7.4.3',
-    connection: {
-      user     : settings.user,
-      password : settings.password,
-      database : settings.database,
-      host     : settings.hostname,
- },
- // pool: { min: 0, max: 7}
-});
 
 
 const searchData = process.argv.slice(2).join(" ");
